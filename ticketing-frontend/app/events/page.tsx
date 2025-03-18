@@ -10,7 +10,7 @@ export default function Events() {
       id: 1,
       title: "Summer Music Festival",
       date: "June 15, 2025",
-      image: "/images/feee.jpeg",
+      image: "public/images/feee.jpeg",
       price: 49.99,
       location: "Central Park, New York",
       category: "music"

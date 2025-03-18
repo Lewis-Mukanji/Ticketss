@@ -16,7 +16,7 @@ export default function Home() {
       id: 2,
       title: "Lust Stories",
       date: "April 12, 2025",
-      image: "/images/lust.jpg",
+      image: "/images/lst.jpeg",
       price: 500,
       location: "Destiny Chapel, Funzi Road",
     },
@@ -36,6 +36,22 @@ export default function Home() {
       price: 29.99,
       location: "Exhibition Hall, Chicago",
     },
+    // {
+    //   id: 5,
+    //   title: "Food & Wine Expo",
+    //   date: "August 5, 2025",
+    //   image: "/images/event3.jpg",
+    //   price: 29.99,
+    //   location: "Exhibition Hall, Chicago",
+    // },
+    // {
+    //   id: 6,
+    //   title: "Food & Wine Expo",
+    //   date: "August 5, 2025",
+    //   image: "/images/event3.jpg",
+    //   price: 29.99,
+    //   location: "Exhibition Hall, Chicago",
+    // },
   ];
 
   return (
@@ -144,12 +160,12 @@ export default function Home() {
                     <span className="text-gray-500">Event Image</span>
                   </div>
                   {/* Uncomment when you have actual images */}
-                  {/* <Image 
+                  <Image 
                     src={event.image} 
                     alt={event.title} 
                     fill 
                     style={{objectFit: 'cover'}} 
-                  /> */}
+                  />
                 </div>
                 <button className="absolute top-2 right-2 text-white p-1 rounded-full">
                   <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
