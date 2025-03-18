@@ -5,7 +5,7 @@ import PurchaseTicketForm from '../../components/PurchaseTicketForm'
 export default async function EventDetails({ params }: { params: { id: string } }) {
   // In a real app, you'd fetch this data from your Laravel API
   const events = [
-    { id: 1, title: 'Summer Music Festival', date: '2025-06-15', image: '/images/music-festival.jpg', price: 59.99, description: 'A weekend of amazing music performances from top artists.', location: 'Central Park, New York' },
+    { id: 1, title: 'Summer Music Festival', date: '2025-06-15', image: '/images/lust.jpg', price: 59.99, description: 'A weekend of amazing music performances from top artists.', location: 'Central Park, New York' },
     { id: 2, title: 'Tech Conference 2025', date: '2025-04-22', image: '/images/tech-conf.jpg', price: 149.99, description: 'Learn about the latest technologies and network with industry professionals.', location: 'Convention Center, San Francisco' },
     { id: 3, title: 'Comedy Night', date: '2025-03-30', image: '/images/comedy.jpg', price: 29.99, description: 'An evening of laughter with top comedians from around the country.', location: 'Laugh Factory, Los Angeles' },
   ]

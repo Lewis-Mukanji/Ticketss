@@ -11,7 +11,7 @@ export default function Dashboard() {
         eventId: 1,
         eventTitle: 'Summer Music Festival', 
         eventDate: '2025-06-15', 
-        eventImage: '/images/music-festival.jpg',
+        eventImage: '/images/lust.jpg"',
         qrCode: '/images/qr-code-1.png',
         purchaseDate: '2025-03-10'
       },

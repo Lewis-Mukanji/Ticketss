@@ -4,12 +4,60 @@ import { useState } from 'react'
 import Link from 'next/link'
 import { useRouter } from 'next/navigation'
 
+interface RegistrationModalProps {
+  isOpen: boolean;
+  onClose: () => void;
+}
+
+function RegistrationModal({ isOpen, onClose }: RegistrationModalProps) {
+  if (!isOpen) return null
+
+  return (
+    <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center">
+      <div className="bg-white p-6 rounded-3xl shadow-lg max-w-md w-full">
+        <h2 className="text-3 xl font-bold mb-4">Sign up for TicketYako</h2>
+        <form className="space-y-4">
+          <div>
+            <label className="block mb-1 font-medium">Email address</label>
+            <input type="email" className="w-full p-2 border rounded" required />
+          </div>
+          <div className="flex space-x-4">
+            <div>
+              <label className="block mb-1 font-medium">First name</label>
+              <input type="text" className="w-full p-2 border rounded" required />
+            </div>
+            <div>
+              <label className="block mb-1 font-medium">Last name</label>
+              <input type="text" className="w-full p-2 border rounded" required />
+            </div>
+          </div>
+          <div>
+            <label className="block mb-1 font-medium">Password</label>
+            <input type="password" className="w-full p-2 border rounded" required />
+          </div>
+          <div>
+            <label className="block mb-1 font-medium">Phone number (Optional)</label>
+            <input type="tel" className="w-full p-2 border rounded" />
+          </div>
+          <button type="submit" className="w-full bg-blue-600 text-white py-3 rounded font-medium hover:bg-blue-700">
+            Sign up
+          </button>
+        </form>
+        <button onClick={onClose} className="mt-4 text-blue-600 hover:underline">
+          Close
+        </button>
+      </div>
+    </div>
+  )
+}
+
 export default function Login() {
   const router = useRouter()
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
   const [isLoading, setIsLoading] = useState(false)
   const [error, setError] = useState('')
+  const [isModalOpen, setIsModalOpen] = useState(false)
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
@@ -73,11 +121,13 @@ export default function Login() {
         
         <p className="mt-4 text-center">
           Don't have an account? 
-          <Link href="/register" className="text-blue-600 hover:underline ml-1">
+          <button onClick={() => setIsModalOpen(true)} className="text-blue-600 hover:underline ml-1">
             Register
-          </Link>
+          </button>
         </p>
       </div>
+
+      <RegistrationModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
     </div>
   )
 }

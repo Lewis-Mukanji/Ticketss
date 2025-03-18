@@ -8,7 +8,7 @@ export default function Home() {
       id: 1,
       title: "Fearless Gala",
       date: "August 25, 2025",
-      image: "/images/lust.jpg",
+      image: "/images/fyc.jpeg",
       price: 5000,
       location: "Clarence Matheny, Limuru",
     },
@@ -59,9 +59,9 @@ export default function Home() {
       {/* Hero Section - Dark Stadium Background */}
       <section className="relative h-screen max-h-[600px] bg-black text-white">
         {/* Background Image (stadium) - add your actual image path when available */}
-        <div className="absolute inset-0 bg-[url('/images/stadium-background.jpg')] bg-cover bg-center opacity-70">
+        <div className="absolute inset-0 bg-[url('/images/l3.jpg')] bg-cover bg-center opacity-150">
           {/* Overlay to darken the image */}
-          <div className="absolute inset-0 bg-black opacity-70"></div>
+          <div className="absolute inset-0 bg-black opacity-30"></div>
         </div>
 
         {/* Navigation Bar */}
@@ -85,7 +85,7 @@ export default function Home() {
               </nav>
             </div>
             <div className="flex items-center space-x-4">
-              <span>Ksh.</span>
+                <span className="text-3xl">🌍</span>
               <Link href="/support" className="hover:text-gray-300">
                 Support
               </Link>
@@ -155,7 +155,7 @@ export default function Home() {
                 key={event.id}
                 className="bg-white rounded-lg overflow-hidden shadow-md relative transform transition-transform duration-300 hover:scale-105 hover:shadow-lg"
               >
-                <div className="relative h-48 w-full">
+                <div className="relative h-80 w-full">
                   <div className="bg-gray-300 h-full w-full flex items-center justify-center">
                     <span className="text-gray-500">Event Image</span>
                   </div>

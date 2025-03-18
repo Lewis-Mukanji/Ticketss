@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 
 export default function Events() {
   // Mock events data (will be fetched from API later)
@@ -10,7 +11,7 @@ export default function Events() {
       id: 1,
       title: "Summer Music Festival",
       date: "June 15, 2025",
-      image: "public/images/feee.jpeg",
+      image: "/images/lust.jpg",
       price: 49.99,
       location: "Central Park, New York",
       category: "music"
@@ -139,12 +140,12 @@ export default function Events() {
                     <span className="text-gray-500">Event Image</span>
                   </div>
                   {/* Uncomment when you have actual images */}
-                  {/* <Image 
+                  <Image 
                     src={event.image} 
                     alt={event.title} 
                     fill 
                     style={{objectFit: 'cover'}} 
-                  /> */}
+                  />
                 </div>
                 <div className="p-4">
                   <h3 className="text-xl font-semibold mb-2">{event.title}</h3>
