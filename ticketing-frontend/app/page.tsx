@@ -86,7 +86,7 @@ export default function Home() {
             </div>
             <div className="flex items-center space-x-4">
                 <span className="text-3xl">🌍</span>
-              <Link href="/support" className="hover:text-gray-300">
+              <Link href="/admin" className="hover:text-gray-300">
                 Support
               </Link>
               <Link href="/login" className="hover:text-gray-300">
@@ -155,7 +155,7 @@ export default function Home() {
                 key={event.id}
                 className="bg-white rounded-lg overflow-hidden shadow-md relative transform transition-transform duration-300 hover:scale-105 hover:shadow-lg"
               >
-                <div className="relative h-80 w-full">
+                <div className="relative h-85 w-full">
                   <div className="bg-gray-300 h-full w-full flex items-center justify-center">
                     <span className="text-gray-500">Event Image</span>
                   </div>

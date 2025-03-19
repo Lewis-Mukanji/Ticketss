@@ -3,6 +3,8 @@
 import { useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
+import EventCard from '../components/EventCard';
+import SearchBar from '../components/SearchBar';
 
 export default function Events() {
   // Mock events data (will be fetched from API later)
@@ -88,11 +90,11 @@ export default function Events() {
   const categories = ['music', 'sports', 'tech', 'arts', 'food', 'business'];
 
   return (
-    <div className="min-h-screen p-4 md:p-8">
+    <div className="min-h-screen p-4 md:p-8 bg-gray-50">
       <div className="max-w-6xl mx-auto">
-        <h1 className="text-3xl font-bold mb-6">All Events</h1>
+        <h1 className="text-3xl font-bold mb-6 text-center">Upcoming Events</h1>
 
-        {/* Search and Filter */}
+        {/* Search and Filter Section */}
         <div className="bg-white p-4 rounded-lg shadow-md mb-8">
           <div className="flex flex-col md:flex-row gap-4">
             <div className="flex-grow">
@@ -134,8 +136,12 @@ export default function Events() {
         {sortedEvents.length > 0 ? (
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {sortedEvents.map((event) => (
-              <div key={event.id} className="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-lg transition">
+              <div
+                key={event.id}
+                className="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-xl transform hover:scale-105 transition-all duration-300"
+              >
                 <div className="relative h-48 w-full">
+                  {/* Placeholder for images */}
                   <div className="bg-gray-300 h-full w-full flex items-center justify-center">
                     <span className="text-gray-500">Event Image</span>
                   </div>
@@ -144,7 +150,7 @@ export default function Events() {
                     src={event.image} 
                     alt={event.title} 
                     fill 
-                    style={{objectFit: 'cover'}} 
+                    style={{ objectFit: 'cover' }} 
                   />
                 </div>
                 <div className="p-4">
