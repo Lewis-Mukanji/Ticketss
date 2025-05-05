@@ -27,7 +27,7 @@ function RegistrationModal({ isOpen, onClose }: RegistrationModalProps) {
               <input type="text" className="w-full p-2 border rounded" required />
             </div>
             <div>
-              <label className="block mb-1 font-medium">Last name</label>
+              <label htmlFor="lastName" className="block mb-1 font-medium">Last name</label>
               <input type="text" className="w-full p-2 border rounded" required />
             </div>
           </div>

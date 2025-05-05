@@ -15,6 +15,8 @@ import {
   LucideUserPlus,
   LucideSearch,
   LucideFilter,
+  LucideMoon,
+  LucideSun,
 } from "lucide-react";
 
 export default function AdminDashboard() {
@@ -101,6 +103,12 @@ export default function AdminDashboard() {
     categories: [] as { name: string; price: number; available: number }[]
   });
 
+  const [isDarkMode, setIsDarkMode] = useState(false);
+
+  const toggleTheme = () => {
+    setIsDarkMode(!isDarkMode);
+  };
+
   const handleAddEvent = () => {
     const { id, ...restNewEvent } = newEvent;
     const event = {
@@ -165,10 +173,10 @@ export default function AdminDashboard() {
     },
     {
       id: 3,
-      image: "https://via.placeholder.com/150",
-      title: "Event 3",
-      location: "Location 3",
-      description: "Description 3",
+      image: "/images/lst.jpeg",
+      title: "Pastors Conference",
+      location: "Icc Imara",
+      description: "Annual Pastors conference event",
       price: 300,
       date: "2024-06-10",
       time: "12:00 PM",
@@ -593,9 +601,9 @@ export default function AdminDashboard() {
   };
 
   return (
-    <div className="min-h-screen flex bg-gray-100">
+    <div className={`min-h-screen flex ${isDarkMode ? 'bg-gray-900 text-white' : 'bg-gray-100 text-gray-900'}`}>
       {/* Sidebar */}
-      <aside className="w-64 bg-white shadow-md p-4 hover:shadow-lg transition-shadow duration-300">
+      <aside className={`w-64 ${isDarkMode ? 'bg-gray-800' : 'bg-white'} shadow-md p-4 hover:shadow-lg transition-shadow duration-300`}>
         <h2 className="text-xl font-bold mb-6 flex items-center">
           <LucideLayoutDashboard className="w-6 h-6 mr-2" /> Admin Dashboard
         </h2>
@@ -647,9 +655,21 @@ export default function AdminDashboard() {
 
       {/* Main Content */}
       <main className="flex-1 p-6">
-        <h1 className="text-2xl font-bold mb-6">
-          {activeTab.charAt(0).toUpperCase() + activeTab.slice(1)}
-        </h1>
+        <div className="flex justify-between items-center mb-6">
+          <h1 className="text-2xl font-bold">
+            {activeTab.charAt(0).toUpperCase() + activeTab.slice(1)}
+          </h1>
+          <button
+            onClick={toggleTheme}
+            className="p-2 rounded-full hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors duration-200"
+          >
+            {isDarkMode ? (
+              <LucideSun className="w-6 h-6 text-yellow-500" />
+            ) : (
+              <LucideMoon className="w-6 h-6 text-gray-700" />
+            )}
+          </button>
+        </div>
         {renderContent()}
       </main>
     </div>
